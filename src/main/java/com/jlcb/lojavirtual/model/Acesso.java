@@ -22,7 +22,7 @@ public class Acesso implements GrantedAuthority {
 	private Long id;
 
 	@Column(nullable = false)
-	private String descricao; /* ROLE_ADMIN ou ROLE_BALCAO */
+	private String descricao; /* ROLE_ADMIN, ROLE_BALCONISTA, ROLE_FINANCEIRO */
 
 	public Acesso() {
 
