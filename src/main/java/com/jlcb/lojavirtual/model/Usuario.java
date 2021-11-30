@@ -68,8 +68,7 @@ public class Usuario implements UserDetails {
 	}
 
 	/*
-	 * Autoridades = São os acessos, ou seja, ROLE_ADMIN, ROLE_BALCONISTA,
-	 * ROLE_FINANCEIRO
+	 * Autoridades = São os acessos, ou seja, ROLE_ADMIN, ROLE_BALCONISTA, ROLE_FINANCEIRO
 	 */
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
