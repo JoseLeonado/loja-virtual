@@ -20,7 +20,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.jlcb.lojavirtual.enums.StatusContaPagar;
-import com.jlcb.lojavirtual.enums.StatusContaReceber;
 
 @Entity
 @Table(name = "conta_pagar")
