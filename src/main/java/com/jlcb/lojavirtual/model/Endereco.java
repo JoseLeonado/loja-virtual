@@ -42,7 +42,7 @@ public class Endereco implements Serializable {
 
 	private String cidade;
 
-	@ManyToOne(targetEntity = Pessoa.class)
+	@ManyToOne
 	@JoinColumn(name = "pessoa_id", nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "pessoa_fk"))
 	private Pessoa pessoa;
 	

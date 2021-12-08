@@ -47,11 +47,11 @@ public class ContaPagar implements Serializable {
 
 	private BigDecimal valorDesconto;
 
-	@ManyToOne(targetEntity = Pessoa.class)
+	@ManyToOne
 	@JoinColumn(name = "pessoa_id", nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "pessoa_fk"))
 	private Pessoa pessoa;
 
-	@ManyToOne(targetEntity = Pessoa.class)
+	@ManyToOne
 	@JoinColumn(name = "pessoa_id", nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "pessoa_fornecedor_fk"))
 	private Pessoa pessoaFornecedor;
 
