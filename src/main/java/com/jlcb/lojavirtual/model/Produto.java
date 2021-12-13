@@ -29,7 +29,7 @@ public class Produto implements Serializable {
 	@Column(columnDefinition = "text", length = 2000)
 	private String descricao;
 
-	private Boolean ativo;
+	private Boolean ativo = Boolean.TRUE;
 
 	private Double peso;
 
@@ -41,15 +41,15 @@ public class Produto implements Serializable {
 
 	private BigDecimal valorVenda = BigDecimal.ZERO;
 
-	private Integer quantidadeEstoque;
+	private Integer quantidadeEstoque = 0;
 
-	private Boolean alertaEstoqueBaixo;
+	private Boolean alertaEstoqueBaixo = Boolean.FALSE;
 
-	private Integer quantidadeEstoqueAlerta;
+	private Integer quantidadeEstoqueAlerta = 0;
 
 	private String linkYoutube;
 
-	private Integer quantidadeClique;
+	private Integer quantidadeClique = 0;
 
 	public Produto() {
 

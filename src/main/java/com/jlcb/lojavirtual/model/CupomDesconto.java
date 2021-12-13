@@ -2,6 +2,7 @@ package com.jlcb.lojavirtual.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "cupom_desconto")
@@ -21,11 +24,14 @@ public class CupomDesconto implements Serializable {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_cupom_desconto")
 	private Long id;
 
-	private String codigo;
+	private String codigoDescricao;
 
 	private BigDecimal valorDinheiro;
 
 	private BigDecimal valorPorcentagem;
+
+	@Temporal(TemporalType.DATE)
+	private Date dataValidade;
 
 	public CupomDesconto() {
 
@@ -39,12 +45,12 @@ public class CupomDesconto implements Serializable {
 		this.id = id;
 	}
 
-	public String getCodigo() {
-		return codigo;
+	public String getCodigoDescricao() {
+		return codigoDescricao;
 	}
 
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
+	public void setCodigoDescricao(String codigoDescricao) {
+		this.codigoDescricao = codigoDescricao;
 	}
 
 	public BigDecimal getValorDinheiro() {
@@ -61,6 +67,14 @@ public class CupomDesconto implements Serializable {
 
 	public void setValorPorcentagem(BigDecimal valorPorcentagem) {
 		this.valorPorcentagem = valorPorcentagem;
+	}
+
+	public Date getDataValidade() {
+		return dataValidade;
+	}
+
+	public void setDataValidade(Date dataValidade) {
+		this.dataValidade = dataValidade;
 	}
 
 	@Override
