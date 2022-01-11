@@ -35,19 +35,15 @@ class LojaVirtualApplicationTests extends TestCase {
 		Acesso acessoCarregado = acessoRepository.findById(acesso.getId()).get();
 		assertEquals(acesso.getId(), acessoCarregado.getId());
 		
-		acessoController.deletar(acessoCarregado.getId());
-		acessoRepository.flush();
-		
+		acessoController.deletar(acessoCarregado.getId());		
 		Acesso acessoDeletado = acessoRepository.findById(acessoCarregado.getId()).orElse(null);
 		assertEquals(true, acessoDeletado == null);
 		
 		acesso = new Acesso();
 		acesso.setDescricao("ROLE_ALUNO");
 		acesso = acessoController.salvar(acesso).getBody();
-		
 		List<Acesso> acessos = acessoRepository.buscarAcessoPelaDescricao("ALUNO".trim().toUpperCase());
 		assertEquals(1, acessos.size());
-		
 		acessoController.deletar(acesso.getId());
 	}
 
