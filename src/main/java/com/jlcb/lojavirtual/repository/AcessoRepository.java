@@ -14,6 +14,6 @@ import com.jlcb.lojavirtual.model.Acesso;
 public interface AcessoRepository extends JpaRepository<Acesso, Long> {
 
 	@Query("SELECT a FROM Acesso a WHERE UPPER(trim(a.descricao)) LIKE %:descricao%")
-	List<Acesso> buscarAcessoPelaDescricao(String descricao);
+	List<Acesso> buscarPorDescricao(String descricao);
 	
 }

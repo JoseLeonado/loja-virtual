@@ -1,9 +1,12 @@
 package com.jlcb.lojavirtual.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,6 +23,18 @@ public class AcessoController {
 
 	@Autowired
 	private AcessoService acessoService;
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<Acesso> buscarPorId(@PathVariable Long id) {
+		Acesso acesso = acessoService.buscarPorId(id);
+		return ResponseEntity.ok(acesso);
+	}
+	
+	@GetMapping("/por-descricao/{descricao}")
+	public ResponseEntity<List<Acesso>> buscarPorDescricao(@PathVariable String descricao) {
+		List<Acesso> acessos = acessoService.buscarPorDescricao(descricao);
+		return ResponseEntity.ok(acessos);
+	}
 	
 	@PostMapping
 	public ResponseEntity<Acesso> salvar(@RequestBody Acesso acesso) {
